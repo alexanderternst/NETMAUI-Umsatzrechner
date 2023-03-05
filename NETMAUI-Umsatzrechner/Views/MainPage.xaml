@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NETMAUI_Umsatzrechner.Views.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Geben Sie einen Brutto- Nettobetrag ein und lassen Sie sich die Umsatzsteuer erreichen." />
+
+            <Entry Placeholder="100"
+                   Text="{Binding Betrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Entry>
+
+            <StackLayout RadioButtonGroup.GroupName="IsNetto"
+                         RadioButtonGroup.SelectedValue="{Binding IsNetto, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}">
+                <RadioButton Content="Netto"
+                             IsChecked="True"
+                             Value="True"/>
+                <RadioButton Content="Brutto" 
+                             Value="False"/>
+            </StackLayout>
+
+            <Picker x:Name="picker"
+                    SelectedItem="{Binding Prozent, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>8.0 Prozent</x:String>
+                        <x:String>3.5 Prozent</x:String>
+                        <x:String>2.5 Prozent</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                Text="Berechnen"
+                HorizontalOptions="Center"
+                    Command="{Binding CmdBerechnen}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
