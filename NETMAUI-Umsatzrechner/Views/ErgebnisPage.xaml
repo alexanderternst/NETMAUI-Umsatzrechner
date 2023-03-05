@@ -11,19 +11,27 @@
                FontSize="24"></Label>
 
         <StackLayout Orientation="Horizontal">
-            <Label Text="Netto:  "
-                   FontAttributes="Bold" />
-            <Label Text="{Binding NettoBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Label>
+            <Label Text="Netto:"
+                   FontAttributes="Bold" VerticalTextAlignment="Center"/>
+            <Label Text="{Binding NettoBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                   Margin="5,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Umsatzsteuer (%):  "
-                   FontAttributes="Bold" />
-            <Label Text="{Binding UstBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Label>
+            <Label Text="Umsatzsteuer (%):"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center" />
+            <Label Text="{Binding UstBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                   Margin="5,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Brutto:  "
-                   FontAttributes="Bold" />
-            <Label Text="{Binding BruttoBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Label>
+            <Label Text="Brutto:"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center" />
+            <Label Text="{Binding BruttoBetrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                   Margin="5,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
         </StackLayout>
 
         <Button Text="Zurück" Clicked="Button_Clicked"></Button>

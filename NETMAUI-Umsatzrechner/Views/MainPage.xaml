@@ -3,14 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NETMAUI_Umsatzrechner.Views.MainPage">
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="10"
-            Margin="10"
-            VerticalOptions="Start">
+        <VerticalStackLayout Spacing="25"
+                             Padding="10"
+                             Margin="10"
+                             VerticalOptions="Start">
 
-            <Label
-                Text="Geben Sie einen Brutto- oder Nettobetrag ein und lassen Sie sich die Umsatzsteuer errechnen." />
+            <Label Text="Geben Sie einen Brutto- oder Nettobetrag ein und lassen Sie sich die Umsatzsteuer errechnen." />
 
             <Entry Placeholder="100"
                    Text="{Binding Betrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Entry>
@@ -19,12 +17,12 @@
                          RadioButtonGroup.SelectedValue="{Binding IsNetto, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}">
                 <RadioButton Content="Netto"
                              IsChecked="True"
-                             Value="True"/>
-                <RadioButton Content="Brutto" 
-                             Value="False"/>
+                             Value="True" />
+                <RadioButton Content="Brutto"
+                             Value="False" />
             </StackLayout>
 
-            <Picker x:Name="picker"
+            <Picker x:Name="Picker"
                     SelectedItem="{Binding Prozent, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -35,9 +33,8 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Button
-                Text="Berechnen"
-                    Command="{Binding CmdBerechnen}"/>
+            <Button Text="Berechnen"
+                    Command="{Binding CmdBerechnen}" />
 
         </VerticalStackLayout>
     </ScrollView>
