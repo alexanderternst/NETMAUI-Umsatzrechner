@@ -11,7 +11,8 @@
             <Label Text="Geben Sie einen Brutto- oder Nettobetrag ein und lassen Sie sich die Umsatzsteuer errechnen." />
 
             <Entry Placeholder="100"
-                   Text="{Binding Betrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"></Entry>
+                   Text="{Binding Betrag, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                   Keyboard="Numeric"></Entry>
 
             <StackLayout RadioButtonGroup.GroupName="IsNetto"
                          RadioButtonGroup.SelectedValue="{Binding IsNetto, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}">

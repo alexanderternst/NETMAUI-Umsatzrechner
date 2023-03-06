@@ -76,6 +76,7 @@ namespace NETMAUI_Umsatzrechner
             // Setzen von Standardwerten
             Prozent = "8.0 Prozent";
             IsNetto = "True";
+            Betrag = string.Empty;
         }
 
         // Berechnungsmethode
@@ -97,6 +98,12 @@ namespace NETMAUI_Umsatzrechner
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Alert", $"An error occured. {ex.Message}", "OK");
+            }
+            finally
+            {
+                Prozent = "8.0 Prozent";
+                IsNetto = "True";
+                Betrag = string.Empty;
             }
 
         }
